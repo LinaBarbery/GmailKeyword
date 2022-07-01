@@ -1,0 +1,12 @@
+#config for the app
+username=mail_username
+password=mail_password
+host=imap.gmail.com
+port=993
+folder=Inbox
+find=DevOps
+
+#config for mail
+mail.store.protocol=imaps
+mail.imap.ssl.enable=true
+mail.imap.starttls.enable=true

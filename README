@@ -1,0 +1,34 @@
+README
+------
+
+Solución al problema Keyword en Gmail
+
+
+Descripción de la solución
+--------------------------
+
+La aplicación usa el protocolo imap para conectarse a una cuenta de gmail para descargar los correos filtrados por un keyword configurable y además guardarlos en una base de datos mysql.
+
+Uno de los problemas con los que me conseguí fue filtar los correos para que solo devolviera los que coincidian con el keyword ingresado, para lo que se hizo un filtro en la consulta del folder Inbox cuando se hace la consulta.
+
+Otro de los problemas fue que algunos correos tenian un emoji en el asunto por lo que se tuvo que usar el charset utf8mb4 en la base de datos de mysql para que se pudieran guardar de forma correcta.
+
+
+Instalación de la app
+---------------------
+
+- Primero se debe ejecutar en la base de datos el script para la creación del schema que se encuentra en la carpeta db/gmail_db.sql
+
+- Se debe tener el JRE o JDK de Java 8 (Se hicieron pruebas con el jdk de java de oracle)
+
+- En la carpeta config se pueden encontrar los archivos
+	- config.props: donde se puede configurar las opciones de conexión al correo de gmail y las opciones para configurar el protocolo imap al conectarse.
+	- hibernate.xml: permite configurar el acceso a la base de datos mysql.
+
+Ejecución de la app
+-------------------
+
+La aplicación se ejecuta con el comando java -jar GmailKeyword-1.0-SNAPSHOT.jar
+
+La carpeta config debe estar en la misma ubicación del archivo jar
+
